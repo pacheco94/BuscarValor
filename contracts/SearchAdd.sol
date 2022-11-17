@@ -25,7 +25,7 @@ contract SearchAdd {
 
      //function get vector
      function getVector() public view returns(uint[] memory) {
-         return vector;
+         return vector.ordering();
      }
      
      //function para mostrar valor
