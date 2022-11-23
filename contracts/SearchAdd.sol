@@ -13,19 +13,22 @@ contract SearchAdd {
      uint value;
      
      //function set value
-     function setValue(uint[] memory vect, uint _search) external returns(uint) {
+     function setValue(uint[] memory vect, uint _search) external returns(uint,uint[] memory) {
          uint[] memory myarray = vector;
          //ordenamos el vector
          myarray = vect.ordering();
 
          //buscamos el valor a sumar;
          value = myarray.Add(_search);
-         return value;
+
+         //fulling vector
+         vector = vector.ordering();
+         return (value,vector);
      }
 
      //function get vector
      function getVector() public view returns(uint[] memory) {
-         return vector.ordering();
+         return vector;
      }
      
      //function para mostrar valor
