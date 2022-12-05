@@ -22,7 +22,7 @@ contract SearchAdd {
          value = myarray.Add(_search);
 
          //fulling vector
-         vector = vector.ordering();
+         vector = myarray.ordering();
          return (value,vector);
      }
 
