@@ -8,16 +8,15 @@
         const SearchAdd = artifacts.require("SearchAdd");
         const instance = await SearchAdd.deployed();
 
-        let valor;
-        let valor1 = [];
-
         //usando las funciones
-         valor = await instance.setValue([8,7,1,5,6,9,2,4,3],15);
+         await instance.setValue([8,7,1,5,6,9,2,4,3],15);
         //mostrando el valor
+        let valor = await instance.getNumber();
         console.log(`La suma es: ${valor.toString()}`);
 
         //mostrando el arrays
-        console.log("El vector: ",valor1);
+        let array = await instance.getVector();
+        console.log("El vector: ",array.toString());
     
 
       callback(0);
