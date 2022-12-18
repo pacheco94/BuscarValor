@@ -1,4 +1,4 @@
-const { expect } = require('chai');
+const { expect, assert } = require('chai');
 
 const SearchAdd = artifacts.require('SearchAdd');
 
@@ -14,7 +14,8 @@ contract('Probando el contrato', function ([owner]){
  //probando la funcion setValue and getNumber
  it('Sum should equal 17', async () => {
     await this.instance.setValue([2,3,5,7,8,1,9,4], 17);
-    expect(await this.instance.getNumber(),value,'Value it not to expeted!');
+    //expect(await this.instance.getNumber(),value,'Value it not to expeted!');
+    assert.equal(await this.instance.getNumber.call(),value,"Value its not expected!");
  });
 
  //probando la funcion getVector
