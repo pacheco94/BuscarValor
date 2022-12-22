@@ -3,6 +3,7 @@ pragma solidity ^0.8.4;
 
 library SearchValue {
   
+   error notfound(uint valor);
    function Add(uint[] memory array, uint _valor ) external pure returns(uint) {
          uint result;
          uint inf;
@@ -17,7 +18,9 @@ library SearchValue {
                    sup--;
                }
          }
-         revert('sum not found');
+         revert notfound({
+             valor : _valor
+         });
      }
   
 }
